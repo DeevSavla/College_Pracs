@@ -1,0 +1,14 @@
+MOV AL,[1000h]
+MOV BL,[1002h]
+MOV CL,00h
+ADD AL,BL  
+MOV [1004h],AL
+JNC jump
+INC CL
+jump:
+MOV [1006h],CL
+ret
+
+
+
+
