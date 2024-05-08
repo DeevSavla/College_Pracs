@@ -1,0 +1,35 @@
+DATA SEGMENT
+    STRING DB 99h,12h,36h,54h,45h
+DATA ENDS
+
+CODE SEGMENT
+    ASSUME CS:CODE,DS:DATA
+    START:
+    MOV AX,DATA
+    MOV DS,AX
+    MOV CH,04H
+    
+    OL:MOV CL,04H
+    LEA SI,STRING
+    
+    IL:MOV AL,[SI]
+    MOV BL,[SI+1]
+    CMP AL,BL
+    JC DOWN 
+    MOV DL,[SI+1]
+    XCHG [SI],DL
+    MOV [SI+1],DL
+    
+    DOWN:INC SI
+    DEC CL
+    JNZ IL
+    DEC CH
+    JNZ OL
+CODE ENDS
+END START
+
+ret
+
+
+
+
