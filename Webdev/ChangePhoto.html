@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Image Change</title>
+    </head>
+    <body>
+        <img src="./Image1.jpeg" id="image">
+    </body>
+    <script>
+        image=document.getElementById('image')
+        let array=['Image1.jpeg','Image2.jpeg','Image3.jpeg','Image4.jpeg']
+        currentIndex=0;
+        function changeImage(){
+            currentIndex=(currentIndex+1)%array.length
+            image.src=array[currentIndex] 
+        }
+        setInterval(changeImage,2000)
+    </script>
+</html>
