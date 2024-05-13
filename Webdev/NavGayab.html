@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Navbar Gayab</title>
+    </head>
+    <style>
+        .flex{
+            display: flex;
+            gap: 5px;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+    <body>
+        <nav class="flex" id="nav">
+            <p>About</p>
+            <p>Contact</p>
+            <p>Info</p>
+        </nav>
+    </body>
+    <script>
+        document.getElementById('nav').addEventListener('mouseenter',(event)=>{
+            event.target.classList.add('hidden');
+        })
+        document.getElementById('nav').addEventListener('mouseleave',()=>{
+            event.target.classList.remove('hidden');
+        })
+    </script>
+</html>
