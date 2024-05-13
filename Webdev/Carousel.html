@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Carousel</title>
+</head>
+
+<body>
+    <div>
+        <button id="left">Left</button>
+        <img src="./Image2.jpeg" id="image">
+        <button id="right">Right</button>
+    </div>
+</body>
+<script>
+    image = document.getElementById('image')
+    let array = ['Image1.jpeg', 'Image2.jpeg', 'Image3.jpeg', 'Image4.jpeg']
+    document.getElementById('right').addEventListener('click', () => {
+        const url = image.src;
+        imageIndex = 0;
+        const lastIndex = url.lastIndexOf('/');
+        const fileName = url.substring(lastIndex + 1);
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] == fileName) {
+                imageIndex = i;
+            }
+        }
+        imageIndex=(imageIndex+1)%array.length
+        image.src=array[imageIndex]
+    })
+    document.getElementById('left').addEventListener('click', () => {
+        const url = image.src;
+        imageIndex = 0;
+        const lastIndex = url.lastIndexOf('/');
+        const fileName = url.substring(lastIndex + 1);
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] == fileName) {
+                imageIndex = i;
+            }
+        }
+        if(imageIndex==0){
+            alert('First Image Cannot Go Towards Left')
+        }
+        else{
+            imageIndex=(imageIndex-1)%array.length
+            image.src=array[imageIndex]
+        }
+    })
+</script>
+
+</html>
