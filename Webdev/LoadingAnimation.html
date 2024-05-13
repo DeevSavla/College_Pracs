@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #show {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <p>Loading...</p>
+    </div>
+
+    <h1 id="show">Hey how are you</h1>
+
+    <script>
+        setTimeout(function() {
+            console.log("Page is loading");
+            const loading = document.getElementById('loading').style.display = "none";
+            document.getElementById("show").style.display = "block";
+        }, 2000);
+    </script>
+</body>
+</html>
