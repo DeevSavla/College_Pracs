@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+    </head>
+    <style>
+        input[type='text']{
+            flex-grow: 1;
+        }
+        .flex{
+            display: flex;
+        }
+    </style>
+    <body>
+        <form id="myForm">
+        <h1>Form</h1> 
+        <div class="flex">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required/>
+        </div>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="name" required/>
+        <br><br>
+        <label for="sapid">SapId:</label>
+        <input type="text" id="sapid" required>
+        <br><br>
+        <label for="gender">Gender:</label>
+        <input type="radio" value="Male">Male
+        <input type="radio" value="Female">Female
+        <br><br>
+        <label for="country">Country:</label>
+        <select>
+            <option value="india">India</option>
+            <option value="india">Pakistan</option>
+            <option value="india">SA</option>
+            <option value="india">Syria</option>
+        </select>
+        <br><br>
+        <label for="zipcode">ZipCode:</label>
+        <input type="text" id="zipcode" required>
+        <br><br>
+        <button type="submit" id="submit">Submit</button>
+        <br><br>
+        <div id="msg"></div>
+        </form>
+    </body>
+    <script>
+        sapid=document.getElementById('sapid')
+        document.addEventListener('submit',(event)=>{
+            event.preventDefault();
+            if(sapid.value.length<10){
+                alert("Sapid Error")
+            }
+            document.getElementById('msg').innerHTML="Successfull"
+            document.getElementById('myForm').reset()
+        })
+    </script>
+</html>
