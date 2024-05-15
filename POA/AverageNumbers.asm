@@ -1,0 +1,27 @@
+DATA SEGMENT
+    ARR DB 1h,2h,3h,4h,5h
+    LEN DW $-ARR
+    AVG DW ?
+DATA ENDS
+
+CODE SEGMENT
+    ASSUME CS:CODE,DS:DATA
+    START:
+    MOV AX,DATA
+    MOV DS,AX
+    LEA SI,ARR
+    MOV CX,LEN
+    XOR AX,AX
+    sum:
+    MOV AL,ARR[SI]
+    ADD BX,AX
+    INC SI
+    loop sum
+    MOV AX,BX
+    MOV CX,LEN
+    DIV CX
+    MOV AVG,AX
+    MOV AX,4CH
+    INT 21H
+CODE ENDS
+END START
