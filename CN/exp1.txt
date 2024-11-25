@@ -1,0 +1,43 @@
+COMMANDS 
+
+1. ipconfig - displays ip config - ipv4 and ipv6 address subnet mask and default gateway
+
+2. ipconfig/all - some extra detailed - dhcp enabled , physical address etc..
+
+3. getmac - provides physical/mac address of the device - assigned to nic (network interface card) of each device - hardware address
+
+4. arp - address resolution protocol - maps ip address to mac address in a network.
+
+5. nslookup - name server lookup - tool for DNS queries - Domain Name System - translates domain name to ip address and vice verse.
+
+6. tracert - tracks path for packet to reach from source to destination - -h 4 means maximum 4 hops -w 2 means timeout for 2 ms.
+             provides latency info for each hop
+             hop number - number of intermediary routers    
+
+7. netstat - tool for network diagnosis - shows all active conncetions (TCP/UDP) ports and details of each connection 
+             also lists all routing tables - consists of destination address, path to destination, flags and total cost.
+
+8. ping - used to check connection between 2 devices in same or different network
+
+9. route print - displays the routing tables - shows how your computer send packets to destination
+
+10. hostname - displays name of system provided in the network - local identification in the network
+
+11. curl - used to transfer data between server and client over various networks - handles all HTTP methods and protocols
+           curl -X POST -d "name=John&age=30" http://example.com/submit
+           The -X POST flag specifies that it's a POST request, and -d is used to send the data.
+           curl https://example.com
+           Fetches the content of the specified URL using the HTTP GET method with secured version. 
+
+12. net session - display information about the sessions on the computer 
+                  information about remote users connected to the machine over the network.
+
+13. telnet hostname port - command to connect remote computers or servers over TCP/IP network 
+                          hostname - device you want to connect to 
+                          port - port number for connection  
+                          
+14. path ping - 
+
+15. nbstat - 
+
+16. net - 

@@ -1,0 +1,29 @@
+STEPS:
+
+1.Take all computers, routers and switches needed and connect all with wires 
+
+2.give all computers ip address and default gateway - respective router ip address connected
+
+3.click on the machine for above step - desktop -> ipconfig in dialog box
+
+4.for checking connection use add simple PDU (packet) and select 2 machines 
+
+5.Now apply ip address to routers 
+
+6.keep cursor on red dot you will see interfaces for both sides of connection
+
+7.click the router go to config in dialog box write IP and turn ON PORT STATUS CHECKBOX.
+
+8.For both router connection apply ip address for both routers.
+
+9.All links have green but still no connection.
+
+10.You have to add routing information protocol 
+
+11.Router knows info of router but not of machines in different network
+
+12.So provide RIP in all routers 
+
+13.select router go to config->RIP add networks (1 ip of its network and 1 ip of other network where machine is connected)
+
+14.Now everything will work.
