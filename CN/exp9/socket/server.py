@@ -1,5 +1,6 @@
 import socket
 import time
+import random 
 
 HOST='127.0.0.1'
 PORT=5001
@@ -12,22 +13,24 @@ print(f"the server is listening on {HOST}:{PORT}")
 conn,addr=server_socket.accept()
 print(f"connected by {addr}")
 
-def generate_ack(conn):
+
+with conn:
     while True:
-        data=conn.recv(1024)
+        data=conn.recv(1024).decode()
         if not data:
             break
-        received_data=data.decode()
-        time.sleep(2)
-        print(f"the data which is received is: {received_data}")
-
-        if received_data=='end':
-            print("the client ended the communicaton")
+        if data=='end':
+            print("the connection is ended by the client ")
             break
-        ack=f"sending the acknowledgement of: {received_data}"
-        conn.sendall(ack.encode())
-    conn.close()
-
-generate_ack(conn)
-
+        if random.choice([True,False]):
+            print(f"received data {data}")
+            message='ACK'
+            conn.send(message.encode())
+            time.sleep(1)
+        else:
+            print("lost packets")
+            message='NACK'
+            conn.send(message.encode())
+            time.sleep(1)
+            
 server_socket.close()
